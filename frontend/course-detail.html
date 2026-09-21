@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+html
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Course Detail – Shree Krishna EduTech
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root{--navy:#0B1F4B;--navy-mid:#132d6e;--navy-lt:#1e3f96;--gold:#C9A84C;--gold-lt:#E2C06A;--gold-pale:#F7EFD6;--white:#fff;--off:#F4F6FA;--slate:#64748B;--border:rgba(11,31,75,.10);--shadow-sm:0 4px 16px rgba(11,31,75,.08);--shadow-md:0 12px 48px rgba(11,31,75,.14);--r:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--navy);overflow-x:hidden}
+/* shared nav */
+.topbar{background:var(--navy);color:rgba(255,255,255,.55);font-size:.77rem;padding:8px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.tb-left{display:flex;gap:24px}.tb-item{display:flex;align-items:center;gap:6px}.tb-icon{width:13px;height:13px;opacity:.6}
+.topbar a{color:var(--gold-lt);text-decoration:none;margin-left:18px}
+nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:13px;text-decoration:none}
+.logo-mark{width:44px;height:44px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(11,31,75,.22);flex-shrink:0}
+.logo-mark img{width:100%;height:100%;object-fit:cover}
+.logo-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);display:block;line-height:1.2}
+.logo-sub{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);display:block}
+.nav-links{list-style:none;display:flex;gap:30px;align-items:center}
+.nav-links a{text-decoration:none;font-size:.86rem;font-weight:500;color:#3a4a6b;position:relative;padding-bottom:2px;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .25s}
+.nav-links a:hover{color:var(--navy)}.nav-links a:hover::after{width:100%}
+.btn-nav{background:linear-gradient(135deg,var(--navy),var(--navy-lt));color:#fff;padding:9px 22px;border-radius:50px;font-size:.84rem;font-weight:600;text-decoration:none}
+.btn-nav-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--border);padding:9px 22px;border-radius:50px;font-size:.84rem;font-weight:600;text-decoration:none}
+.nav-auth{display:flex;gap:10px;align-items:center}
+
+/* HERO */
+.course-hero{background:linear-gradient(150deg,var(--navy) 0%,#1a3580 100%);padding:60px 80px 0;position:relative;overflow:hidden}
+.course-hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:.77rem;color:rgba(255,255,255,.42)}
+.breadcrumb a{color:var(--gold-lt);text-decoration:none}.breadcrumb span{opacity:.35}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:end}
+.hero-left{padding-bottom:56px}
+.course-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.ctag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:50px}
+.ctag-mode-classroom{background:rgba(14,165,233,.18);color:#7dd3fc}
+.ctag-mode-online{background:rgba(16,185,129,.18);color:#6ee7b7}
+.ctag-mode-competitive{background:rgba(245,158,11,.18);color:#fcd34d}
+.ctag-level{background:rgba(201,168,76,.2);color:var(--gold-lt)}
+.course-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:800;color:#fff;margin-bottom:14px;line-height:1.15;animation:fadeUp .6s ease both}
+.course-hero p{font-size:.96rem;color:rgba(255,255,255,.58);line-height:1.72;max-width:540px;margin-bottom:28px;animation:fadeUp .6s .1s ease both}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:32px}
+.hm-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.hm-icon{width:14px;height:14px;opacity:.6}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--navy);font-weight:700;padding:13px 30px;border-radius:50px;text-decoration:none;font-size:.9rem;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(201,168,76,.4);transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(201,168,76,.52)}
+.btn-ghost-hero{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.2);padding:13px 30px;border-radius:50px;text-decoration:none;font-size:.9rem;font-weight:500;transition:all .2s}
+.btn-ghost-hero:hover{background:rgba(255,255,255,.15)}
+
+/* HERO CARD */
+.hero-card{background:var(--white);border-radius:20px 20px 0 0;overflow:hidden;box-shadow:var(--shadow-md)}
+.hc-img{width:100%;height:220px;object-fit:cover;display:block}
+.hc-body{padding:24px}
+.hc-price{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.hc-price span{font-size:.85rem;font-weight:400;color:var(--slate);text-decoration:line-through;margin-left:8px}
+.hc-offer{font-size:.75rem;color:#059669;font-weight:600;margin-bottom:16px;background:#d1fae5;padding:3px 10px;border-radius:50px;display:inline-block}
+.hc-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.hc-features li{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--slate)}
+.hc-check{width:18px;height:18px;background:linear-gradient(135deg,var(--navy),var(--navy-lt));border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.6rem}
+.btn-enroll{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--navy);font-weight:700;padding:14px;border-radius:12px;border:none;font-size:.95rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:transform .2s,box-shadow .2s;margin-bottom:10px;box-shadow:0 6px 20px rgba(201,168,76,.35)}
+.btn-enroll:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.48)}
+.btn-enroll-outline{width:100%;background:transparent;color:var(--navy);border:1.5px solid var(--border);font-weight:600;padding:12px;border-radius:12px;font-size:.88rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .2s}
+.btn-enroll-outline:hover{border-color:var(--navy);background:rgba(11,31,75,.04)}
+.hc-guarantee{text-align:center;font-size:.74rem;color:var(--slate);margin-top:12px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* CONTENT */
+.content-layout{display:grid;grid-template-columns:1fr 380px;gap:60px;padding:60px 80px 96px;max-width:1400px;margin:0 auto;align-items:start}
+.content-main{}
+.tab-nav{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:40px}
+.tnav-btn{padding:14px 24px;font-size:.86rem;font-weight:600;color:var(--slate);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'Plus Jakarta Sans',sans-serif}
+.tnav-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+/* Overview */
+.overview-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+.oh-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 18px;text-align:center}
+.oh-img{width:44px;height:44px;border-radius:10px;overflow:hidden;margin:0 auto 10px;border:2px solid var(--gold-pale)}
+.oh-img img{width:100%;height:100%;object-fit:cover}
+.oh-val{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.oh-lbl{font-size:.72rem;color:var(--slate)}
+.overview-text h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:12px}
+.overview-text p{font-size:.9rem;color:var(--slate);line-height:1.75;margin-bottom:20px}
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
+.learn-item{display:flex;align-items:flex-start;gap:9px;font-size:.82rem;color:var(--slate);line-height:1.5}
+.li-check{width:16px;height:16px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.55rem;margin-top:1px}
+
+/* Syllabus */
+.syllabus-list{display:flex;flex-direction:column;gap:12px}
+.syl-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.syl-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;user-select:none}
+.syl-header h4{font-size:.9rem;font-weight:600;color:var(--navy)}
+.syl-meta{display:flex;align-items:center;gap:12px;font-size:.74rem;color:var(--slate)}
+.syl-chevron{width:18px;height:18px;transition:transform .2s;color:var(--slate)}
+.syl-body{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.syl-body.open{max-height:300px;padding:0 20px 16px}
+.syl-topics{list-style:none;display:flex;flex-direction:column;gap:7px}
+.syl-topics li{font-size:.82rem;color:var(--slate);display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid var(--border)}
+.syl-topics li:last-child{border-bottom:none}
+.syl-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+
+/* Faculty */
+.faculty-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fac-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:flex-start}
+.fac-img{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid var(--gold-pale)}
+.fac-img img{width:100%;height:100%;object-fit:cover}
+.fac-name{font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:2px}
+.fac-role{font-size:.76rem;color:var(--gold);font-weight:600;margin-bottom:6px}
+.fac-bio{font-size:.78rem;color:var(--slate);line-height:1.55}
+.fac-exp{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:50px;margin-top:8px}
+
+/* Reviews */
+.reviews-summary{display:grid;grid-template-columns:auto 1fr;gap:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:28px;align-items:center}
+.rs-big{text-align:center}
+.rs-score{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:800;color:var(--navy);line-height:1}
+.rs-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin:4px 0}
+.rs-count{font-size:.77rem;color:var(--slate)}
+.rs-bars{display:flex;flex-direction:column;gap:8px}
+.rs-bar-row{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--slate)}
+.rs-bar-track{flex:1;height:6px;background:var(--off);border-radius:50px;overflow:hidden}
+.rs-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:50px}
+.review-list{display:flex;flex-direction:column;gap:18px}
+.review-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ri-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.ri-img{width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.ri-img img{width:100%;height:100%;object-fit:cover}
+.ri-name{font-weight:600;font-size:.88rem;color:var(--navy)}
+.ri-date{font-size:.72rem;color:var(--slate)}
+.ri-stars{color:var(--gold);font-size:.78rem;letter-spacing:1px;margin-top:2px}
+.ri-text{font-size:.84rem;color:var(--slate);line-height:1.68;font-style:italic}
+
+/* Sidebar sticky */
+.sidebar{position:sticky;top:90px}
+
+/* Related */
+.related-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+.related-list{display:flex;flex-direction:column;gap:12px}
+.rel-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;gap:0;text-decoration:none;color:inherit;transition:box-shadow .2s}
+.rel-card:hover{box-shadow:var(--shadow-sm)}
+.rel-img{width:88px;height:72px;object-fit:cover;display:block;flex-shrink:0}
+.rel-body{padding:12px 14px}
+.rel-body h4{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.rel-body span{font-size:.71rem;color:var(--gold);font-weight:600}
+
+/* Batch timing card */
+.batch-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:20px}
+.batch-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.batch-list{display:flex;flex-direction:column;gap:10px}
+.batch-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--off);border-radius:10px;border:1px solid var(--border)}
+.bi-time{font-size:.84rem;font-weight:600;color:var(--navy)}
+.bi-days{font-size:.74rem;color:var(--slate)}
+.bi-seats{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px}
+.seats-open{background:#d1fae5;color:#059669}
+.seats-filling{background:#fef3c7;color:#d97706}
+
+footer{background:var(--navy);color:rgba(255,255,255,.42);padding:32px 80px 24px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.77rem}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.77rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold-lt)}
+
+@media(max-width:1000px){.hero-grid,.content-layout{grid-template-columns:1fr}.hero-card{margin-top:32px}.sidebar{position:relative;top:0}.overview-highlights{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.topbar,.course-hero,.content-layout,footer{padding-left:20px;padding-right:20px}nav{padding-left:20px;padding-right:20px}.nav-links{display:none}.faculty-grid{grid-template-columns:1fr}.learn-grid{grid-template-columns:1fr}}
+  </style>
+  <style id="sket-v2-theme">
+   /* ================= SHREE KRISHNA EDUTECH V2 THEME ================= */
+:root{--navy:#0A2240 !important;--deep-navy:#07182E !important;--blue:#123F6D !important;--light-blue:#1A5188 !important;--orange:#F6A609 !important;--orange-dark:#E88F00 !important;--gold:#F6A609 !important;--gold-lt:#FFD66F !important;--gold-pale:#FFF3D2 !important;--white:#FFFFFF !important;--off:#F5F8FC !important;--slate:#687789 !important;--border:rgba(10,34,64,.10) !important;--gold-border:rgba(246,166,9,.24) !important;--shadow-sm:0 6px 20px rgba(7,24,46,.08) !important;--shadow-md:0 16px 50px rgba(7,24,46,.14) !important;--r:14px !important}
+html{scroll-behavior:smooth}body{font-family:"Inter",sans-serif !important;background:var(--off) !important;color:#243447 !important;overflow-x:hidden}h1,h2,h3,h4,h5,h6,.logo-name,.section-title,.sec-title,.cat-section-title,.course-hero h1,.page-hero h1,.form-header h2,.form-card h3,.lp-content h2,.success-screen h3,.enroll-banner h3{font-family:"Outfit",sans-serif !important}
+.topbar{display:none !important}
+.navbar,#mainNav{position:sticky !important;top:0 !important;z-index:1000 !important;height:78px !important;padding:0 !important;background:rgba(255,255,255,.97) !important;backdrop-filter:blur(14px) !important;border-bottom:1px solid rgba(10,34,64,.08) !important;display:block !important;box-shadow:none !important}
+.navbar .nav-inner{width:min(1180px,calc(100% - 40px));height:78px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.navbar .logo{display:flex !important;align-items:center;gap:12px;text-decoration:none !important;min-width:0}.navbar .logo-mark{width:48px !important;height:48px !important;border-radius:50% !important;overflow:hidden !important;box-shadow:0 5px 16px rgba(7,24,46,.18) !important;flex-shrink:0 !important}.navbar .logo-mark img{width:100% !important;height:100% !important;object-fit:contain !important}.navbar .logo-name{font-family:"Outfit",sans-serif !important;font-size:1.12rem !important;font-weight:800 !important;color:var(--navy) !important;line-height:1.05 !important}.navbar .logo-name strong{color:var(--orange) !important}.navbar .logo-sub{font-family:"Inter",sans-serif !important;font-size:.67rem !important;letter-spacing:0 !important;text-transform:none !important;color:var(--blue) !important;display:block !important;margin-top:4px}
+.navbar .nav-links{list-style:none !important;display:flex !important;align-items:center !important;gap:26px !important;margin:0 !important;padding:0 !important}.navbar .nav-links a{font-family:"Inter",sans-serif !important;font-size:.91rem !important;font-weight:600 !important;color:var(--navy) !important;text-decoration:none !important;position:relative !important;padding:0 !important}.navbar .nav-links a::after{content:"" !important;position:absolute !important;left:0 !important;bottom:-8px !important;width:0 !important;height:2px !important;background:var(--orange) !important;transition:width .25s ease !important}.navbar .nav-links a:hover::after,.navbar .nav-links a.active::after{width:100% !important}.navbar .nav-links a:hover,.navbar .nav-links a.active{color:var(--orange-dark) !important}.navbar .nav-auth{display:flex !important;align-items:center !important;gap:10px !important}.navbar .btn-nav{background:var(--orange) !important;color:var(--deep-navy) !important;padding:11px 18px !important;border-radius:10px !important;font-weight:800 !important;box-shadow:0 8px 20px rgba(246,166,9,.22) !important}.navbar .btn-nav:hover{transform:translateY(-2px) !important;background:#FFB51B !important}.navbar .btn-nav-ghost{background:transparent !important;color:var(--navy) !important;border:1px solid rgba(10,34,64,.18) !important;padding:10px 17px !important;border-radius:10px !important;font-weight:700 !important}
+.mobile-menu-btn{display:none;width:42px;height:42px;border:1px solid var(--border);background:#fff;border-radius:10px;cursor:pointer}.mobile-menu-btn span{display:block;width:20px;height:2px;background:var(--navy);margin:4px auto}
+.page-hero{background:linear-gradient(135deg,var(--deep-navy),var(--navy) 55%,var(--blue)) !important;padding:76px 24px 74px !important;text-align:center !important;position:relative !important;overflow:hidden !important}.page-hero::before,.course-hero::before,.left-panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}.page-hero .ph-dots,.page-hero .ph-glow,.course-hero-dots,.lp-dots,.lp-glow{opacity:.35}.breadcrumb{position:relative !important;z-index:2 !important}.page-hero h1,.course-hero h1{font-family:"Outfit",sans-serif !important;font-weight:800 !important;letter-spacing:-.5px !important;color:#fff !important}.page-hero p,.course-hero p{color:rgba(255,255,255,.76) !important}.gold-t{background:none !important;-webkit-text-fill-color:initial !important;color:var(--orange) !important}.pill,.btn-ghost-hero,.btn-secondary{border-color:rgba(255,255,255,.35) !important;background:rgba(255,255,255,.07) !important;border-radius:10px !important}.pill:hover,.btn-ghost-hero:hover,.btn-secondary:hover{background:rgba(246,166,9,.12) !important;border-color:rgba(246,166,9,.6) !important;color:#fff !important}
+.btn-nav,.btn-gold,.btn-submit,.btn-enroll,.btn-gold-full,.btn-navy{font-family:"Inter",sans-serif !important}.btn-gold,.btn-enroll,.btn-gold-full{background:var(--orange) !important;color:var(--deep-navy) !important;box-shadow:0 10px 24px rgba(246,166,9,.22) !important;border-radius:10px !important}.btn-gold:hover,.btn-enroll:hover,.btn-gold-full:hover{background:#FFB51B !important}.btn-submit{background:linear-gradient(135deg,var(--navy),var(--blue)) !important;border-radius:10px !important;box-shadow:0 8px 20px rgba(7,24,46,.22) !important}.btn-navy{background:var(--navy) !important;border-radius:10px !important}
+.cc-card,.branch-card,.course-card,.location-card,.why-card,.dp-card,.oh-item,.syl-item,.form-card,.contact-form,.about-card{border-color:var(--border) !important;border-radius:16px !important;box-shadow:0 8px 25px rgba(7,24,46,.05) !important}.cc-card:hover,.branch-card:hover,.course-card:hover,.location-card:hover{border-color:rgba(246,166,9,.32) !important;box-shadow:var(--shadow-sm) !important}
+.contact-section,.courses-layout,.content-layout{max-width:1180px !important;margin-left:auto !important;margin-right:auto !important}.contact-section,.content-layout{padding-top:60px !important;padding-bottom:80px !important;padding-left:0 !important;padding-right:0 !important}.form-card{box-shadow:var(--shadow-md) !important}
+.filter-bar{top:78px !important;padding:0 !important;background:rgba(255,255,255,.97) !important}.filter-bar > *{width:min(1180px,calc(100% - 40px));margin-left:auto;margin-right:auto}.ftab.active,.tnav-btn.active{color:var(--navy) !important;border-bottom-color:var(--orange) !important}.ftab:hover,.tnav-btn:hover{color:var(--orange-dark) !important}.cc-badge{background:var(--navy) !important;color:#FFD66F !important}.cc-arrow{background:var(--orange) !important;color:var(--deep-navy) !important}.enroll-banner{max-width:1180px !important;margin:0 auto 80px !important;background:linear-gradient(135deg,#FFF0C2,#FFD66F) !important;border-radius:18px !important}
+.course-hero{background:linear-gradient(135deg,var(--deep-navy),var(--navy) 60%,var(--blue)) !important;padding-left:0 !important;padding-right:0 !important}.course-hero > *:not(.course-hero-dots){position:relative;z-index:2}.hero-card{border-radius:18px 18px 0 0 !important}
+.page-wrap{min-height:calc(100vh - 78px) !important}.left-panel{background:linear-gradient(145deg,var(--deep-navy),var(--navy) 60%,var(--blue)) !important}.left-panel .lbl,.lp-content .lbl{color:var(--orange) !important}.left-panel .lp-content h2{color:#fff !important}.left-panel .lp-content p{color:rgba(255,255,255,.72) !important}.quote-card{background:rgba(255,255,255,.06) !important;border-color:rgba(255,255,255,.12) !important}.qc-text{color:rgba(255,255,255,.78) !important}.qc-stars{color:var(--orange) !important}.lp-stats .n{background:none !important;-webkit-text-fill-color:initial !important;color:var(--orange) !important}.right-panel{background:#fff !important}.login-tabs{background:var(--off) !important}.ltab.active{color:var(--navy) !important}.form-group input,.form-group select,.form-group textarea,.otp-input{background:#F8FAFD !important;border-color:rgba(10,34,64,.12) !important}.form-group input:focus,.form-group select:focus,.form-group textarea:focus,.otp-input:focus{border-color:var(--light-blue) !important;box-shadow:0 0 0 3px rgba(26,81,136,.10) !important;background:#fff !important}.step.done .step-num{background:var(--orange) !important;color:var(--deep-navy) !important}.step.active .step-num{background:var(--navy) !important}.step-line.done{background:var(--orange) !important}.btn-back{border-radius:10px !important}
+footer{background:var(--deep-navy) !important;color:rgba(255,255,255,.58) !important}.footer-bottom,.footer-grid{border-color:rgba(255,255,255,.10) !important}.footer-links a,.footer-col a{color:rgba(255,255,255,.62) !important}.footer-links a:hover,.footer-col a:hover{color:var(--orange) !important}
+.reveal{opacity:1}.js-ready .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1050px){.navbar .nav-links{gap:18px !important}.navbar .nav-auth .btn-nav-ghost{display:none !important}.cards-grid{grid-template-columns:repeat(3,1fr) !important}}
+@media(max-width:820px){.mobile-menu-btn{display:block}.navbar > .nav-inner{position:relative}.navbar nav{position:absolute !important;top:78px !important;left:14px !important;right:14px !important;display:none !important;background:#fff !important}.navbar nav.open{display:block !important}.navbar .nav-links{display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:0 !important;background:#fff !important;border:1px solid var(--border) !important;border-radius:14px !important;padding:8px !important;box-shadow:var(--shadow-md) !important}.navbar .nav-links a{display:block !important;padding:12px 14px !important;border-radius:9px !important}.navbar .nav-links a:hover{background:var(--off) !important}.navbar .nav-links a::after{display:none !important}.navbar .nav-auth{display:none !important}.page-hero{padding-left:20px !important;padding-right:20px !important}.contact-section,.content-layout,.courses-layout{width:min(100% - 28px,1180px) !important}.filter-bar{padding:0 !important;overflow-x:auto !important}.filter-tabs{min-width:max-content !important}.filter-right{display:none !important}.cards-grid{grid-template-columns:repeat(2,1fr) !important}}
+@media(max-width:620px){.container,.navbar .nav-inner{width:calc(100% - 28px)}.navbar .logo-name{font-size:1rem !important}.navbar .logo-sub{font-size:.58rem !important}.page-hero{padding:60px 18px !important}.cards-grid{grid-template-columns:1fr !important}.contact-main-grid,.hero-grid,.content-layout,.page-wrap{grid-template-columns:1fr !important}.left-panel{min-height:auto !important;padding:44px 24px !important}.right-panel{padding:42px 24px !important}.form-row,.overview-highlights,.dp-cards{grid-template-columns:1fr !important}.course-hero{padding-top:44px !important}.hero-left{padding-bottom:36px !important}.enroll-banner{margin-left:14px !important;margin-right:14px !important;padding:32px 24px !important}}
+  </style>
+ </head>
+ <body>
+  <header class="navbar" id="mainNav">
+   <div class="nav-inner">
+    <a class="logo" href="index.html">
+     <div class="logo-mark">
+      <img alt="Shree Krishna EduTech Logo" src="images/logo.png"/>
+     </div>
+     <div>
+      <span class="logo-name">
+       Shree Krishna
+       <strong>
+        EduTech
+       </strong>
+      </span>
+      <span class="logo-sub">
+       Where Creativity Meets Technology
+      </span>
+     </div>
+    </a>
+    <button aria-label="Open menu" class="mobile-menu-btn" id="mobileMenuBtn" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav id="siteNav">
+     <ul class="nav-links">
+      <li>
+       <a class="" href="index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="" href="index.html#about">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="active" href="courses.html">
+        Courses
+       </a>
+      </li>
+      <li>
+       <a class="" href="index.html#locations">
+        Locations
+       </a>
+      </li>
+      <li>
+       <a class="" href="index.html#why-us">
+        Why Us
+       </a>
+      </li>
+      <li>
+       <a class="" href="contact.html">
+        Contact
+       </a>
+      </li>
+      <li>
+       <a class="btn-nav" href="register.html">
+        Book Free Demo
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  COURSE HERO
+  <div class="course-hero">
+   <div class="course-hero-dots">
+   </div>
+   <div class="breadcrumb">
+    <a href="index.html">
+     Home
+    </a>
+    <span>
+     /
+    </span>
+    <a href="courses.html">
+     Courses
+    </a>
+    <span>
+     /
+    </span>
+    BCA &amp; MCA Program
+   </div>
+   <div class="hero-grid">
+    <div class="hero-left">
+     <div class="course-tags">
+      <span class="ctag ctag-mode-classroom">
+       Classroom
+      </span>
+      <span class="ctag ctag-level">
+       UG / PG Level
+      </span>
+      <span class="ctag ctag-level">
+       Updated 2025
+      </span>
+     </div>
+     <h1>
+      BCA &amp; MCA – Computer Science Coaching
+     </h1>
+     <p>
+      Complete university-aligned coaching covering Programming, DBMS, Web Technologies, Data Structures, and Software Engineering — with live lab sessions and project guidance.
+     </p>
+     <div class="hero-meta">
+      <div class="hm-item">
+       <svg class="hm-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+       6 Months Duration
+      </div>
+      <div class="hm-item">
+       <svg class="hm-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+       Max 20 Students
+      </div>
+      <div class="hm-item">
+       <svg class="hm-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+       4.8 / 5 Rating
+      </div>
+      <div class="hm-item">
+       <svg class="hm-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+       Certificate Provided
+      </div>
+     </div>
+     <div class="hero-btns">
+      <a class="btn-gold" href="register.html">
+       Enroll Now →
+      </a>
+      <a class="btn-ghost-hero" href="#syllabus">
+       View Syllabus
+      </a>
+     </div>
+    </div>
+    <div class="hero-card">
+     <img alt="BCA MCA Course" class="hc-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=760&amp;h=440&amp;fit=crop&amp;q=85"/>
+     <div class="hc-body">
+      <div class="hc-price">
+       ₹12,000
+       <span>
+        ₹18,000
+       </span>
+      </div>
+      <div class="hc-offer">
+       33% Early Bird Discount
+      </div>
+      <ul class="hc-features">
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        180+ hours of live sessions
+       </li>
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        Lab access included
+       </li>
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        Study material &amp; notes
+       </li>
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        Project guidance
+       </li>
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        Mock tests &amp; assessments
+       </li>
+       <li>
+        <div class="hc-check">
+         ✓
+        </div>
+        Completion certificate
+       </li>
+      </ul>
+      <button class="btn-enroll" onclick="window.location='register.html'">
+       Enroll Now →
+      </button>
+      <button class="btn-enroll-outline" onclick="window.location='index.html#contact'">
+       Talk to Counsellor
+      </button>
+      <div class="hc-guarantee">
+       Free counselling session included
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  CONTENT
+  <div class="content-layout">
+   <div class="content-main">
+    TAB NAV
+    <div class="tab-nav">
+     <button class="tnav-btn active" data-tab="overview">
+      Overview
+     </button>
+     <button class="tnav-btn" data-tab="syllabus">
+      Syllabus
+     </button>
+     <button class="tnav-btn" data-tab="faculty">
+      Faculty
+     </button>
+     <button class="tnav-btn" data-tab="reviews">
+      Reviews
+     </button>
+    </div>
+    OVERVIEW
+    <div class="tab-panel active" id="tab-overview">
+     <div class="overview-highlights">
+      <div class="oh-item">
+       <div class="oh-img">
+        <img alt="faculty" src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=88&amp;h=88&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div class="oh-val">
+        3
+       </div>
+       <div class="oh-lbl">
+        Expert Faculty
+       </div>
+      </div>
+      <div class="oh-item">
+       <div class="oh-img">
+        <img alt="students" src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=88&amp;h=88&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div class="oh-val">
+        320+
+       </div>
+       <div class="oh-lbl">
+        Students Enrolled
+       </div>
+      </div>
+      <div class="oh-item">
+       <div class="oh-img">
+        <img alt="tests" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=88&amp;h=88&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div class="oh-val">
+        25+
+       </div>
+       <div class="oh-lbl">
+        Mock Tests
+       </div>
+      </div>
+     </div>
+     <div class="overview-text">
+      <h3>
+       About This Program
+      </h3>
+      <p>
+       This program is designed for BCA and MCA students who need strong subject-wise coaching aligned to their university curriculum. Each subject is taught by a specialist faculty member with real-world experience, ensuring both theoretical understanding and practical application.
+      </p>
+      <p>
+       Classes are held in small batches of maximum 20 students to ensure every student receives individual attention. Doubt-clearing sessions are held weekly, and students get access to comprehensive study material, practice question banks, and lab facilities.
+      </p>
+      <h3 style="margin-bottom:14px">
+       What You Will Learn
+      </h3>
+      <div class="learn-grid">
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        C, C++, Java and Python Programming
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Database Management Systems (DBMS)
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Data Structures &amp; Algorithms
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Operating Systems &amp; Computer Networks
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Web Technologies (HTML, CSS, JS, PHP)
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Software Engineering &amp; SDLC
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Computer Organization &amp; Architecture
+       </div>
+       <div class="learn-item">
+        <div class="li-check">
+         ✓
+        </div>
+        Project Design &amp; Implementation
+       </div>
+      </div>
+      <h3 style="margin-bottom:14px">
+       Who This Is For
+      </h3>
+      <p>
+       This program is ideal for BCA (1st–3rd year) and MCA (1st–2nd year) students enrolled at any university in Hyderabad who want structured coaching, regular assessments, and expert guidance throughout their degree.
+      </p>
+     </div>
+    </div>
+    SYLLABUS
+    <div class="tab-panel" id="syllabus">
+     <div class="syllabus-list">
+      <div class="syl-item">
+       <div class="syl-header" onclick="toggleSyl(this)">
+        <h4>
+         Module 1 – Programming Fundamentals
+        </h4>
+        <div class="syl-meta">
+         <span>
+          8 Topics
+         </span>
+         <span>
+          30 hrs
+         </span>
+         <svg class="syl-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="syl-body open">
+        <ul class="syl-topics">
+         <li>
+          <span class="syl-dot">
+          </span>
+          C Programming – Basics to Advanced
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          C++ OOP Concepts
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Java Fundamentals &amp; OOP
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Python Programming
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Arrays, Pointers, Structures
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          File Handling
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="syl-item">
+       <div class="syl-header" onclick="toggleSyl(this)">
+        <h4>
+         Module 2 – Data Structures &amp; Algorithms
+        </h4>
+        <div class="syl-meta">
+         <span>
+          7 Topics
+         </span>
+         <span>
+          25 hrs
+         </span>
+         <svg class="syl-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="syl-body">
+        <ul class="syl-topics">
+         <li>
+          <span class="syl-dot">
+          </span>
+          Arrays &amp; Linked Lists
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Stacks &amp; Queues
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Trees &amp; Graphs
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Sorting &amp; Searching Algorithms
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Time &amp; Space Complexity
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="syl-item">
+       <div class="syl-header" onclick="toggleSyl(this)">
+        <h4>
+         Module 3 – Database Management Systems
+        </h4>
+        <div class="syl-meta">
+         <span>
+          6 Topics
+         </span>
+         <span>
+          20 hrs
+         </span>
+         <svg class="syl-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="syl-body">
+        <ul class="syl-topics">
+         <li>
+          <span class="syl-dot">
+          </span>
+          ER Model &amp; Relational Model
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          SQL – DDL, DML, DCL
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Normalization
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Transaction Management
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          MySQL &amp; Oracle Practicals
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="syl-item">
+       <div class="syl-header" onclick="toggleSyl(this)">
+        <h4>
+         Module 4 – Web Technologies
+        </h4>
+        <div class="syl-meta">
+         <span>
+          7 Topics
+         </span>
+         <span>
+          22 hrs
+         </span>
+         <svg class="syl-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="syl-body">
+        <ul class="syl-topics">
+         <li>
+          <span class="syl-dot">
+          </span>
+          HTML5 &amp; CSS3
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          JavaScript &amp; DOM
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          PHP &amp; MySQL Integration
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Responsive Design
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Mini Project
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="syl-item">
+       <div class="syl-header" onclick="toggleSyl(this)">
+        <h4>
+         Module 5 – Project &amp; Assessment
+        </h4>
+        <div class="syl-meta">
+         <span>
+          4 Topics
+         </span>
+         <span>
+          18 hrs
+         </span>
+         <svg class="syl-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="syl-body">
+        <ul class="syl-topics">
+         <li>
+          <span class="syl-dot">
+          </span>
+          Final Project Selection &amp; Planning
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Development &amp; Testing
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Documentation
+         </li>
+         <li>
+          <span class="syl-dot">
+          </span>
+          Viva &amp; Presentation
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    FACULTY
+    <div class="tab-panel" id="tab-faculty">
+     <div class="faculty-grid">
+      <div class="fac-card">
+       <div class="fac-img">
+        <img alt="faculty" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=120&amp;h=120&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div>
+        <div class="fac-name">
+         Dr. Suresh Rao
+        </div>
+        <div class="fac-role">
+         Head of CS &amp; Programming
+        </div>
+        <div class="fac-bio">
+         PhD in Computer Science with 18 years of teaching experience. Specialises in OOP, Algorithms, and Software Architecture.
+        </div>
+        <span class="fac-exp">
+         18 Years Exp
+        </span>
+       </div>
+      </div>
+      <div class="fac-card">
+       <div class="fac-img">
+        <img alt="faculty" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&amp;h=120&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div>
+        <div class="fac-name">
+         Ms. Kavitha Nair
+        </div>
+        <div class="fac-role">
+         DBMS &amp; Web Technologies
+        </div>
+        <div class="fac-bio">
+         M.Tech in Information Technology with 12 years of academic and industry experience in database systems and web development.
+        </div>
+        <span class="fac-exp">
+         12 Years Exp
+        </span>
+       </div>
+      </div>
+      <div class="fac-card">
+       <div class="fac-img">
+        <img alt="faculty" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&amp;h=120&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div>
+        <div class="fac-name">
+         Mr. Arun Sharma
+        </div>
+        <div class="fac-role">
+         Data Structures &amp; Networks
+        </div>
+        <div class="fac-bio">
+         M.Sc Computer Science with 10 years of coaching experience. Known for making complex DS concepts approachable and practical.
+        </div>
+        <span class="fac-exp">
+         10 Years Exp
+        </span>
+       </div>
+      </div>
+      <div class="fac-card">
+       <div class="fac-img">
+        <img alt="faculty" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&amp;h=120&amp;fit=crop&amp;q=80"/>
+       </div>
+       <div>
+        <div class="fac-name">
+         Mr. Rajesh Kumar
+        </div>
+        <div class="fac-role">
+         Project Mentor &amp; Labs
+        </div>
+        <div class="fac-bio">
+         Industry veteran with 14 years in software development. Guides students on final projects and practical lab work.
+        </div>
+        <span class="fac-exp">
+         14 Years Exp
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    REVIEWS
+    <div class="tab-panel" id="tab-reviews">
+     <div class="reviews-summary">
+      <div class="rs-big">
+       <div class="rs-score">
+        4.8
+       </div>
+       <div class="rs-stars">
+        ★★★★★
+       </div>
+       <div class="rs-count">
+        128 Reviews
+       </div>
+      </div>
+      <div class="rs-bars">
+       <div class="rs-bar-row">
+        <span>
+         5
+        </span>
+        <div class="rs-bar-track">
+         <div class="rs-bar-fill" style="width:82%">
+         </div>
+        </div>
+        <span>
+         82%
+        </span>
+       </div>
+       <div class="rs-bar-row">
+        <span>
+         4
+        </span>
+        <div class="rs-bar-track">
+         <div class="rs-bar-fill" style="width:12%">
+         </div>
+        </div>
+        <span>
+         12%
+        </span>
+       </div>
+       <div class="rs-bar-row">
+        <span>
+         3
+        </span>
+        <div class="rs-bar-track">
+         <div class="rs-bar-fill" style="width:4%">
+         </div>
+        </div>
+        <span>
+         4%
+        </span>
+       </div>
+       <div class="rs-bar-row">
+        <span>
+         2
+        </span>
+        <div class="rs-bar-track">
+         <div class="rs-bar-fill" style="width:1%">
+         </div>
+        </div>
+        <span>
+         1%
+        </span>
+       </div>
+       <div class="rs-bar-row">
+        <span>
+         1
+        </span>
+        <div class="rs-bar-track">
+         <div class="rs-bar-fill" style="width:1%">
+         </div>
+        </div>
+        <span>
+         1%
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="review-list">
+      <div class="review-item">
+       <div class="ri-header">
+        <div class="ri-img">
+         <img alt="" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=84&amp;h=84&amp;fit=crop&amp;q=80"/>
+        </div>
+        <div>
+         <div class="ri-name">
+          Ananya Reddy
+         </div>
+         <div class="ri-date">
+          March 2025
+         </div>
+         <div class="ri-stars">
+          ★★★★★
+         </div>
+        </div>
+       </div>
+       <div class="ri-text">
+        The DBMS and programming sessions were outstanding. I was placed at TCS within 3 months of completing the course. The project guidance was particularly valuable.
+       </div>
+      </div>
+      <div class="review-item">
+       <div class="ri-header">
+        <div class="ri-img">
+         <img alt="" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=84&amp;h=84&amp;fit=crop&amp;q=80"/>
+        </div>
+        <div>
+         <div class="ri-name">
+          Kiran Babu
+         </div>
+         <div class="ri-date">
+          January 2025
+         </div>
+         <div class="ri-stars">
+          ★★★★★
+         </div>
+        </div>
+       </div>
+       <div class="ri-text">
+        Best coaching for MCA subjects in Hyderabad. The faculty explains every concept with real examples. Small batch size means all doubts get cleared every session.
+       </div>
+      </div>
+      <div class="review-item">
+       <div class="ri-header">
+        <div class="ri-img">
+         <img alt="" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=84&amp;h=84&amp;fit=crop&amp;q=80"/>
+        </div>
+        <div>
+         <div class="ri-name">
+          Sravanthi G
+         </div>
+         <div class="ri-date">
+          December 2024
+         </div>
+         <div class="ri-stars">
+          ★★★★☆
+         </div>
+        </div>
+       </div>
+       <div class="ri-text">
+        Very structured approach to BCA coaching. The study material is comprehensive and the mock tests really helped me prepare for university exams.
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   SIDEBAR
+   <div class="sidebar">
+    <div class="batch-card">
+     <h4>
+      Available Batch Timings
+     </h4>
+     <div class="batch-list">
+      <div class="batch-item">
+       <div>
+        <div class="bi-time">
+         7:00 AM – 9:00 AM
+        </div>
+        <div class="bi-days">
+         Mon, Wed, Fri
+        </div>
+       </div>
+       <span class="bi-seats seats-filling">
+        3 Seats Left
+       </span>
+      </div>
+      <div class="batch-item">
+       <div>
+        <div class="bi-time">
+         5:00 PM – 7:00 PM
+        </div>
+        <div class="bi-days">
+         Mon to Sat
+        </div>
+       </div>
+       <span class="bi-seats seats-open">
+        Seats Open
+       </span>
+      </div>
+      <div class="batch-item">
+       <div>
+        <div class="bi-time">
+         7:00 PM – 9:00 PM
+        </div>
+        <div class="bi-days">
+         Mon to Sat
+        </div>
+       </div>
+       <span class="bi-seats seats-open">
+        Seats Open
+       </span>
+      </div>
+      <div class="batch-item">
+       <div>
+        <div class="bi-time">
+         9:00 AM – 11:00 AM
+        </div>
+        <div class="bi-days">
+         Sat &amp; Sun (Weekend)
+        </div>
+       </div>
+       <span class="bi-seats seats-open">
+        Seats Open
+       </span>
+      </div>
+     </div>
+    </div>
+    <div style="margin-bottom:24px">
+     <div class="related-title">
+      You May Also Like
+     </div>
+     <div class="related-list">
+      <a class="rel-card" href="course-detail.html">
+       <img alt="MBA" class="rel-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=176&amp;h=144&amp;fit=crop&amp;q=80"/>
+       <div class="rel-body">
+        <h4>
+         MBA Training
+        </h4>
+        <span>
+         Classroom
+        </span>
+       </div>
+      </a>
+      <a class="rel-card" href="course-detail.html">
+       <img alt="BTech" class="rel-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=176&amp;h=144&amp;fit=crop&amp;q=80"/>
+       <div class="rel-body">
+        <h4>
+         BTech Support
+        </h4>
+        <span>
+         Classroom
+        </span>
+       </div>
+      </a>
+      <a class="rel-card" href="course-detail.html">
+       <img alt="GATE" class="rel-img" src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=176&amp;h=144&amp;fit=crop&amp;q=80"/>
+       <div class="rel-body">
+        <h4>
+         GATE Preparation
+        </h4>
+        <span>
+         Competitive
+        </span>
+       </div>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer>
+   <div class="footer-bottom">
+    <p>
+     ©
+     <span id="yearFooter">
+     </span>
+     Shree Krishna EduTech. All Rights Reserved.
+    </p>
+    <div class="footer-links">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="courses.html">
+      Courses
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Tabs
+document.querySelectorAll('.tnav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tnav-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+// Syllabus accordion
+function toggleSyl(header){
+  const body=header.nextElementSibling;
+  const chevron=header.querySelector('.syl-chevron');
+  body.classList.toggle('open');
+  chevron.style.transform=body.classList.contains('open')?'rotate(180deg)':'';
+}
+// Nav scroll
+window.addEventListener('scroll',()=>{});
+  </script>
+  <script>
+   (function(){const b=document.getElementById("mobileMenuBtn"),n=document.getElementById("siteNav");if(b&&n){b.addEventListener("click",()=>n.classList.toggle("open"));n.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>n.classList.remove("open")));}const y=document.getElementById("yearFooter");if(y)y.textContent=new Date().getFullYear();})();
+  </script>
+ </body>
+</html>

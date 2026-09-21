@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Register | Shree Krishna EduTech</title>
+
+  <meta
+    name="description"
+    content="Create your Shree Krishna EduTech learner account and verify your mobile number with OTP."
+  />
+
+  <meta name="theme-color" content="#0A2240" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #0A2240;
+      --deep-navy: #07182E;
+      --blue: #123F6D;
+      --light-blue: #1A5188;
+      --orange: #F6A609;
+      --orange-dark: #E88F00;
+      --white: #FFFFFF;
+      --light: #F5F8FC;
+      --text: #243447;
+      --muted: #687789;
+      --border: #E5EAF0;
+      --danger: #dc2626;
+      --success: #059669;
+      --shadow: 0 20px 55px rgba(7,24,46,.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--light);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    button,input,select,textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(10,34,64,.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .brand-text { line-height: 1.05; }
+    .brand-name {
+      font-family: "Outfit", sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 1.12rem;
+    }
+    .brand-name strong { color: var(--orange); }
+    .brand-tagline {
+      margin-top: 4px;
+      color: var(--blue);
+      font-size: .67rem;
+      font-weight: 600;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .nav-right a {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .nav-right a:hover { color: var(--orange-dark); }
+
+    /* LAYOUT */
+    .page-wrap {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+    }
+
+    /* LEFT */
+    .left-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 55px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 15%, rgba(246,166,9,.16), transparent 25%),
+        radial-gradient(circle at 12% 90%, rgba(26,81,136,.35), transparent 28%),
+        linear-gradient(135deg, var(--deep-navy), var(--navy));
+    }
+
+    .left-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: .32;
+    }
+
+    .left-panel::after {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      right: -180px;
+      bottom: -160px;
+      border: 1px solid rgba(246,166,9,.13);
+      box-shadow:
+        0 0 0 35px rgba(246,166,9,.025),
+        0 0 0 70px rgba(246,166,9,.015);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate { to { transform: rotate(360deg); } }
+
+    .left-content {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 50px;
+      color: #FFD56E;
+      background: rgba(246,166,9,.10);
+      border: 1px solid rgba(246,166,9,.30);
+      font-size: .75rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .left-content h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .left-content h1 span { color: var(--orange); }
+
+    .left-content > p {
+      color: rgba(255,255,255,.72);
+      font-size: .97rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .benefit-icon {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(246,166,9,.12);
+      color: var(--orange);
+      font-weight: 900;
+      font-size: .74rem;
+    }
+
+    .benefit h3 {
+      font-family: "Outfit", sans-serif;
+      font-size: .92rem;
+      margin-bottom: 2px;
+    }
+
+    .benefit p {
+      color: rgba(255,255,255,.52);
+      font-size: .78rem;
+    }
+
+    .security-note {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: rgba(255,255,255,.48);
+      font-size: .72rem;
+    }
+
+    /* RIGHT */
+    .right-panel {
+      padding: 50px 60px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-wrap {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .form-header {
+      margin-bottom: 25px;
+    }
+
+    .form-label {
+      color: var(--orange-dark);
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .form-header h2 {
+      font-family: "Outfit", sans-serif;
+      color: var(--navy);
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 7px;
+    }
+
+    .form-header p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* STEPS */
+    .steps {
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--light);
+      font-size: .74rem;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .step.active .step-num {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+      box-shadow: 0 6px 18px rgba(10,34,64,.20);
+    }
+
+    .step.done .step-num {
+      background: var(--orange);
+      color: var(--deep-navy);
+      border-color: var(--orange);
+    }
+
+    .step-label {
+      font-size: .73rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .step.active .step-label { color: var(--navy); }
+
+    .step-line {
+      flex: 1;
+      height: 2px;
+      margin: 0 8px;
+      background: var(--border);
+    }
+
+    .step-line.done { background: var(--orange); }
+
+    /* FORM */
+    .form-section { display: none; }
+    .form-section.active {
+      display: block;
+      animation: slideIn .35s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      color: var(--navy);
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--light);
+      color: var(--navy);
+      padding: 0 14px;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    .form-group textarea {
+      padding-top: 12px;
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--light-blue);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(26,81,136,.08);
+    }
+
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: var(--danger);
+    }
+
+    .error-text {
+      color: var(--danger);
+      font-size: .69rem;
+      display: none;
+    }
+
+    .form-group.error .error-text { display: block; }
+
+    .input-wrap { position: relative; }
+
+    .password-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .input-wrap input { padding-right: 65px; }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 4px 0 20px;
+    }
+
+    .checkbox-row input {
+      margin-top: 3px;
+      accent-color: var(--orange);
+    }
+
+    .checkbox-row label {
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.55;
+    }
+
+    .checkbox-row a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .submit-btn {
+      width: 100%;
+      min-height: 50px;
+      border: none;
+      border-radius: 11px;
+      background: var(--orange);
+      color: var(--deep-navy);
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(246,166,9,.23);
+      transition: .25s ease;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: #ffb51b;
+    }
+
+    .submit-btn:disabled {
+      opacity: .62;
+      cursor: wait;
+    }
+
+    .back-btn {
+      width: 100%;
+      min-height: 45px;
+      margin-top: 10px;
+      border-radius: 11px;
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .back-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .login-link a {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    /* OTP */
+    .otp-intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .otp-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(246,166,9,.12);
+      color: var(--orange-dark);
+      font-size: 1.45rem;
+    }
+
+    .otp-intro h3 {
+      font-family: "Outfit", sans-serif;
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .otp-intro p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    #otpPhone {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .otp-row {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 15px;
+    }
+
+    .otp-input {
+      width: 48px;
+      height: 55px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--light);
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--navy);
+      outline: none;
+      transition: .2s ease;
+    }
+
+    .otp-input:focus {
+      border-color: var(--orange);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(246,166,9,.10);
+    }
+
+    .otp-hint {
+      text-align: center;
+      color: var(--muted);
+      font-size: .77rem;
+      margin-bottom: 22px;
+    }
+
+    .otp-hint button {
+      border: none;
+      background: transparent;
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .otp-hint button:disabled {
+      color: var(--muted);
+      cursor: not-allowed;
+    }
+
+    .countdown {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .70rem;
+    }
+
+    /* ALERT */
+    .alert {
+      display: none;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 12px 13px;
+      border-radius: 11px;
+      font-size: .76rem;
+      margin-bottom: 17px;
+    }
+
+    .alert.show { display: flex; }
+
+    .alert.error {
+      color: #991b1b;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+
+    .alert.success {
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* SUCCESS */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .success-screen.active {
+      display: block;
+      animation: slideIn .4s ease;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d1fae5;
+      color: var(--success);
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .success-screen h3 {
+      font-family: "Outfit", sans-serif;
+      color: var(--navy);
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .success-screen p {
+      max-width: 460px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .success-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      background: var(--orange);
+      color: var(--deep-navy);
+      font-weight: 900;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .left-panel { padding: 55px 35px; }
+      .right-panel { padding: 50px 30px; }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav-inner { min-height: 68px; }
+      .brand img { width: 42px; height: 42px; }
+      .brand-name { font-size: .98rem; }
+      .brand-tagline { display: none; }
+      .nav-right span { display: none; }
+      .nav-right a { padding: 9px 13px; border-radius: 9px; background: var(--light); }
+      .left-panel { padding: 50px 24px; }
+      .right-panel { padding: 45px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .step-label { display: none; }
+      .otp-input { width: 43px; height: 50px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Shree Krishna EduTech Logo">
+
+        <div class="brand-text">
+          <div class="brand-name">
+            Shree Krishna <strong>EduTech</strong>
+          </div>
+          <div class="brand-tagline">
+            Where Creativity Meets Technology
+          </div>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <span>Already have an account?</span>
+        <a href="login.html">Login →</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="page-wrap">
+
+    <section class="left-panel">
+
+      <div class="left-content">
+
+        <div class="eyebrow">
+          <span></span>
+          Student Registration
+        </div>
+
+        <h1>
+          Start Your
+          <span>Learning Journey.</span>
+        </h1>
+
+        <p>
+          Create your Shree Krishna EduTech account and get access
+          to course information, learning programs and future
+          student services.
+        </p>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="benefit-icon">01</div>
+            <div>
+              <h3>Simple Registration</h3>
+              <p>Complete your profile in a few guided steps.</p>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">02</div>
+            <div>
+              <h3>Mobile Verification</h3>
+              <p>Your phone number is verified using a real OTP.</p>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">03</div>
+            <div>
+              <h3>Course Preferences</h3>
+              <p>Tell us what you want to learn and when you prefer to study.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="security-note">
+          🔒 Your account password is securely stored using hashing.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="right-panel">
+
+      <div class="form-wrap">
+
+        <div class="form-header">
+          <div class="form-label">Create Account</div>
+          <h2>Register with Shree Krishna EduTech</h2>
+          <p>Use your mobile number to securely verify your account.</p>
+        </div>
+
+
+        <div class="steps" id="stepsBar">
+
+          <div class="step active" id="s1">
+            <div class="step-num">1</div>
+            <div class="step-label">Personal Info</div>
+          </div>
+
+          <div class="step-line" id="line1"></div>
+
+          <div class="step inactive" id="s2">
+            <div class="step-num">2</div>
+            <div class="step-label">Course</div>
+          </div>
+
+          <div class="step-line" id="line2"></div>
+
+          <div class="step inactive" id="s3">
+            <div class="step-num">3</div>
+            <div class="step-label">Verify OTP</div>
+          </div>
+
+        </div>
+
+
+        <div class="alert error" id="errorAlert">
+          <span>⚠</span>
+          <span id="errorMessage"></span>
+        </div>
+
+        <div class="alert success" id="successAlert">
+          <span>✓</span>
+          <span id="successMessage"></span>
+        </div>
+
+
+        <!-- STEP 1 -->
+
+        <div class="form-section active" id="step1">
+
+          <div class="form-row">
+
+            <div class="form-group" id="groupFirstName">
+              <label for="firstName">First Name *</label>
+              <input id="firstName" type="text" placeholder="First name" autocomplete="given-name">
+              <span class="error-text">Enter your first name.</span>
+            </div>
+
+            <div class="form-group" id="groupLastName">
+              <label for="lastName">Last Name *</label>
+              <input id="lastName" type="text" placeholder="Last name" autocomplete="family-name">
+              <span class="error-text">Enter your last name.</span>
+            </div>
+
+          </div>
+
+
+          <div class="form-group" id="groupEmail">
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" placeholder="your@email.com" autocomplete="email">
+            <span class="error-text">Enter a valid email address.</span>
+          </div>
+
+
+          <div class="form-group" id="groupPhone">
+            <label for="phone">Mobile Number *</label>
+            <input id="phone" type="tel" inputmode="numeric" maxlength="15" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+            <span class="error-text">Enter a valid Indian mobile number.</span>
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input id="dob" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="form-group" id="groupPassword">
+            <label for="password">Password *</label>
+
+            <div class="input-wrap">
+              <input
+                id="password"
+                type="password"
+                placeholder="Minimum 6 characters"
+                autocomplete="new-password"
+              >
+              <button
+                type="button"
+                class="password-toggle"
+                onclick="togglePassword()"
+              >Show</button>
+            </div>
+
+            <span class="error-text">Password must contain at least 6 characters.</span>
+          </div>
+
+
+          <button
+            class="submit-btn"
+            type="button"
+            onclick="goToStep2()"
+          >
+            Continue →
+          </button>
+
+
+          <div class="login-link">
+            Already have an account?
+            <a href="login.html">Login here</a>
+          </div>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="form-section" id="step2">
+
+          <div class="form-group" id="groupProgram">
+            <label for="program">Program of Interest *</label>
+
+            <select id="program">
+              <option value="">Select a program</option>
+              <option>DCA / PGDCA / ADCA</option>
+              <option>Excel & Tally</option>
+              <option>Programming</option>
+              <option>Generative AI</option>
+              <option>AI & Machine Learning</option>
+              <option>Web Development</option>
+              <option>School Foundation</option>
+              <option>Intermediate Support</option>
+              <option>Career Skills</option>
+              <option>Other</option>
+            </select>
+
+            <span class="error-text">Please select a program.</span>
+          </div>
+
+
+          <div class="form-group">
+            <label for="courseType">Course Type</label>
+
+            <select id="courseType">
+              <option value="">Select type</option>
+              <option>Classroom (In-person)</option>
+              <option>Online (Live Classes)</option>
+              <option>Online (Recorded + Live)</option>
+              <option>Either</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="timing">Preferred Batch Timing</label>
+
+            <select id="timing">
+              <option value="">Select timing</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+              <option>Weekend</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="institution">Current School / College / Institution</label>
+            <input
+              id="institution"
+              type="text"
+              placeholder="Enter institution name"
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="source">How did you hear about us?</label>
+
+            <select id="source">
+              <option value="">Select</option>
+              <option>Google Search</option>
+              <option>Friend / Family Referral</option>
+              <option>Instagram / Facebook</option>
+              <option>YouTube</option>
+              <option>Walk-in</option>
+              <option>College / Institution</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="message">Message / Requirement</label>
+
+            <textarea
+              id="message"
+              maxlength="500"
+              placeholder="Tell us what you are looking for..."
+            ></textarea>
+          </div>
+
+
+          <div class="checkbox-row">
+            <input id="terms" type="checkbox">
+            <label for="terms">
+              I agree to the registration terms and understand that
+              my mobile number will be verified by OTP.
+            </label>
+          </div>
+
+
+          <button
+            class="submit-btn"
+            type="button"
+            id="sendOtpBtn"
+            onclick="sendOtp()"
+          >
+            Send OTP →
+          </button>
+
+
+          <button
+            class="back-btn"
+            type="button"
+            onclick="setStep(1)"
+          >
+            ← Back
+          </button>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="form-section" id="step3">
+
+          <div class="otp-intro">
+
+            <div class="otp-icon">
+              ◉
+            </div>
+
+            <h3>
+              Verify Your Mobile
+            </h3>
+
+            <p>
+              We sent a 6-digit OTP to
+              <strong id="otpPhone">+91 XXXXX XXXXX</strong>
+            </p>
+
+          </div>
+
+
+          <div class="otp-row">
+
+            <input class="otp-input" maxlength="1" inputmode="numeric" autocomplete="one-time-code">
+            <input class="otp-input" maxlength="1" inputmode="numeric">
+            <input class="otp-input" maxlength="1" inputmode="numeric">
+            <input class="otp-input" maxlength="1" inputmode="numeric">
+            <input class="otp-input" maxlength="1" inputmode="numeric">
+            <input class="otp-input" maxlength="1" inputmode="numeric">
+
+          </div>
+
+
+          <div class="otp-hint">
+            Didn't receive the OTP?
+            <button
+              type="button"
+              id="resendBtn"
+              onclick="resendOtp()"
+              disabled
+            >
+              Resend OTP
+            </button>
+
+            <span
+              class="countdown"
+              id="countdown"
+            ></span>
+          </div>
+
+
+          <button
+            class="submit-btn"
+            type="button"
+            id="verifyOtpBtn"
+            onclick="verifyRegistrationOtp()"
+          >
+            Verify & Create Account
+          </button>
+
+
+          <button
+            class="back-btn"
+            type="button"
+            onclick="setStep(2)"
+          >
+            ← Back
+          </button>
+
+        </div>
+
+
+        <!-- SUCCESS -->
+
+        <div class="success-screen" id="successScreen">
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h3>
+            Registration Successful
+          </h3>
+
+          <p id="successText">
+            Your mobile number has been verified and your
+            Shree Krishna EduTech account has been created.
+          </p>
+
+          <a
+            href="login.html"
+            class="success-btn"
+          >
+            Go to Login
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    /* =========================================================
+       IMPORTANT
+       Change this after deploying the Node.js backend.
+
+       Local development:
+       http://localhost:5000
+
+       Render example:
+       https://your-backend-name.onrender.com
+    ========================================================= */
+
+    const API_BASE_URL =
+      window.SKET_API_BASE_URL ||
+      "http://localhost:5000";
+
+
+    let otpCountdownTimer = null;
+    let otpSecondsRemaining = 0;
+
+
+    function showError(message) {
+
+      document.getElementById("successAlert")
+        .classList.remove("show");
+
+      document.getElementById("errorMessage")
+        .textContent = message;
+
+      document.getElementById("errorAlert")
+        .classList.add("show");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    function showSuccessMessage(message) {
+
+      document.getElementById("errorAlert")
+        .classList.remove("show");
+
+      document.getElementById("successMessage")
+        .textContent = message;
+
+      document.getElementById("successAlert")
+        .classList.add("show");
+    }
+
+
+    function clearAlerts() {
+
+      document.getElementById("errorAlert")
+        .classList.remove("show");
+
+      document.getElementById("successAlert")
+        .classList.remove("show");
+    }
+
+
+    function setGroupError(id, hasError) {
+
+      const group =
+        document.getElementById(id);
+
+      if (!group) return;
+
+      group.classList.toggle(
+        "error",
+        hasError
+      );
+    }
+
+
+    function validateStep1() {
+
+      let valid = true;
+
+      const firstName =
+        document.getElementById("firstName").value.trim();
+
+      const lastName =
+        document.getElementById("lastName").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const password =
+        document.getElementById("password").value;
+
+      setGroupError(
+        "groupFirstName",
+        !firstName
+      );
+
+      setGroupError(
+        "groupLastName",
+        !lastName
+      );
+
+      const validEmail =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          .test(email);
+
+      setGroupError(
+        "groupEmail",
+        !validEmail
+      );
+
+      const digits =
+        phone.replace(/\D/g, "");
+
+      const validPhone =
+        digits.length === 10 ||
+        (digits.length === 12 && digits.startsWith("91"));
+
+      setGroupError(
+        "groupPhone",
+        !validPhone
+      );
+
+      setGroupError(
+        "groupPassword",
+        password.length < 6
+      );
+
+      if (!firstName || !lastName || !validEmail || !validPhone || password.length < 6) {
+        valid = false;
+        showError("Please correct the highlighted fields.");
+      }
+
+      return valid;
+    }
+
+
+    function setStep(step) {
+
+      clearAlerts();
+
+      [1,2,3].forEach(function (number) {
+
+        document
+          .getElementById("step" + number)
+          .classList.toggle(
+            "active",
+            number === step
+          );
+
+        const stepElement =
+          document.getElementById("s" + number);
+
+        stepElement.className =
+          "step " +
+          (
+            number < step
+              ? "done"
+              : number === step
+                ? "active"
+                : "inactive"
+          );
+
+      });
+
+      document
+        .getElementById("line1")
+        .classList.toggle(
+          "done",
+          step >= 2
+        );
+
+      document
+        .getElementById("line2")
+        .classList.toggle(
+          "done",
+          step >= 3
+        );
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    function goToStep2() {
+
+      if (!validateStep1()) {
+        return;
+      }
+
+      setStep(2);
+    }
+
+
+    function getPayload() {
+
+      return {
+        firstName:
+          document.getElementById("firstName").value.trim(),
+
+        lastName:
+          document.getElementById("lastName").value.trim(),
+
+        email:
+          document.getElementById("email").value.trim(),
+
+        phone:
+          document.getElementById("phone").value.trim(),
+
+        dob:
+          document.getElementById("dob").value,
+
+        gender:
+          document.getElementById("gender").value,
+
+        password:
+          document.getElementById("password").value,
+
+        program:
+          document.getElementById("program").value,
+
+        courseType:
+          document.getElementById("courseType").value,
+
+        timing:
+          document.getElementById("timing").value,
+
+        institution:
+          document.getElementById("institution").value.trim(),
+
+        source:
+          document.getElementById("source").value,
+
+        message:
+          document.getElementById("message").value.trim()
+      };
+    }
+
+
+    async function sendOtp(isResend = false) {
+
+      clearAlerts();
+
+      const program =
+        document.getElementById("program").value;
+
+      const terms =
+        document.getElementById("terms").checked;
+
+      setGroupError(
+        "groupProgram",
+        !program
+      );
+
+      if (!program) {
+        showError("Please select a program.");
+        return;
+      }
+
+      if (!terms) {
+        showError("Please agree to the registration terms to continue.");
+        return;
+      }
+
+      const button =
+        document.getElementById(
+          isResend ? "resendBtn" : "sendOtpBtn"
+        );
+
+      if (button) {
+        button.disabled = true;
+
+        if (!isResend) {
+          button.textContent = "Sending OTP...";
+        }
+      }
+
+      try {
+
+        const response =
+          await fetch(
+            API_BASE_URL +
+            (isResend
+              ? "/api/register/resend-otp"
+              : "/api/register/send-otp"),
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(
+                getPayload()
+              )
+            }
+          );
+
+        const result =
+          await response.json()
+            .catch(() => ({}));
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message ||
+            "Unable to send OTP."
+          );
+        }
+
+        document
+          .getElementById("otpPhone")
+          .textContent = result.phone;
+
+        if (!isResend) {
+          setStep(3);
+        }
+
+        showSuccessMessage(
+          isResend
+            ? "A new OTP has been sent to your mobile."
+            : "OTP sent successfully."
+        );
+
+        startCountdown(60);
+
+        document
+          .querySelector(".otp-input")
+          ?.focus();
+
+      } catch (error) {
+
+        showError(
+          error.message ||
+          "Unable to connect to the server."
+        );
+
+      } finally {
+
+        if (button && !isResend) {
+          button.disabled = false;
+          button.textContent = "Send OTP →";
+        }
+
+      }
+    }
+
+
+    function startCountdown(seconds) {
+
+      clearInterval(otpCountdownTimer);
+
+      otpSecondsRemaining = seconds;
+
+      const resendBtn =
+        document.getElementById("resendBtn");
+
+      const countdown =
+        document.getElementById("countdown");
+
+      resendBtn.disabled = true;
+
+      countdown.textContent =
+        "You can resend in " +
+        otpSecondsRemaining +
+        " seconds.";
+
+      otpCountdownTimer =
+        setInterval(function () {
+
+          otpSecondsRemaining--;
+
+          if (otpSecondsRemaining <= 0) {
+
+            clearInterval(
+              otpCountdownTimer
+            );
+
+            resendBtn.disabled = false;
+
+            countdown.textContent =
+              "You can request another OTP now.";
+
+            return;
+          }
+
+          countdown.textContent =
+            "You can resend in " +
+            otpSecondsRemaining +
+            " seconds.";
+
+        }, 1000);
+    }
+
+
+    async function resendOtp() {
+
+      await sendOtp(true);
+    }
+
+
+    async function verifyRegistrationOtp() {
+
+      clearAlerts();
+
+      const otp =
+        Array.from(
+          document.querySelectorAll(".otp-input")
+        )
+        .map(input => input.value.trim())
+        .join("");
+
+      if (!/^\d{6}$/.test(otp)) {
+        showError("Please enter the complete 6-digit OTP.");
+        return;
+      }
+
+      const button =
+        document.getElementById("verifyOtpBtn");
+
+      button.disabled = true;
+      button.textContent = "Verifying...";
+
+      try {
+
+        const response =
+          await fetch(
+            API_BASE_URL +
+            "/api/register/verify-otp",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                phone:
+                  document.getElementById("phone").value.trim(),
+                otp
+              })
+            }
+          );
+
+        const result =
+          await response.json()
+            .catch(() => ({}));
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message ||
+            "OTP verification failed."
+          );
+        }
+
+        if (result.token) {
+          localStorage.setItem(
+            "sket_auth_token",
+            result.token
+          );
+        }
+
+        if (result.user) {
+          localStorage.setItem(
+            "sket_user",
+            JSON.stringify(result.user)
+          );
+        }
+
+        document
+          .getElementById("step3")
+          .classList.remove("active");
+
+        document
+          .getElementById("stepsBar")
+          .style.display = "none";
+
+        document
+          .querySelector(".form-header")
+          .style.display = "none";
+
+        document
+          .getElementById("successText")
+          .textContent =
+            "Your mobile number has been verified and your Shree Krishna EduTech account has been created successfully.";
+
+        document
+          .getElementById("successScreen")
+          .classList.add("active");
+
+      } catch (error) {
+
+        showError(
+          error.message ||
+          "Unable to verify OTP."
+        );
+
+      } finally {
+
+        button.disabled = false;
+        button.textContent =
+          "Verify & Create Account";
+      }
+    }
+
+
+    function togglePassword() {
+
+      const input =
+        document.getElementById("password");
+
+      const button =
+        document.querySelector(".password-toggle");
+
+      if (input.type === "password") {
+        input.type = "text";
+        button.textContent = "Hide";
+      } else {
+        input.type = "password";
+        button.textContent = "Show";
+      }
+    }
+
+
+    /* OTP input auto-advance */
+
+    document
+      .querySelectorAll(".otp-input")
+      .forEach(function (input, index, inputs) {
+
+        input.addEventListener(
+          "input",
+          function () {
+
+            this.value =
+              this.value.replace(/\D/g, "");
+
+            if (this.value && inputs[index + 1]) {
+              inputs[index + 1].focus();
+            }
+
+          }
+        );
+
+        input.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (
+              event.key === "Backspace" &&
+              !this.value &&
+              inputs[index - 1]
+            ) {
+              inputs[index - 1].focus();
+            }
+
+          }
+        );
+
+      });
+  </script>
+
+</body>
+</html>
